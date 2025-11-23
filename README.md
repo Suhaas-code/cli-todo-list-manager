@@ -1,19 +1,20 @@
 # cli-todo-list-manager
 
-A lightweight command-line suite for tracking tasks with colored menus, priorities,
-and due-date reminders backed by a JSON datastore.
+A dual-mode to-do manager that bundles a Tkinter GUI and the original
+colorful CLI into a single script backed by a shared JSON datastore.
 
-## Getting Started
-1. Ensure Python 3.9+ is installed.
-2. Install dependencies (none beyond the standard library).
-3. Run the CLI: `python todo_cli.py`.
+## Running the App
+- GUI mode (default): `python todo.py`
+- CLI mode: `python todo.py -cli`
 
 ## Features
-- Add, edit, delete, and complete tasks with optional due dates and priorities.
-- Filter views for completed, pending, or due-soon tasks.
-- Persistent storage in `tasks.json`, reloaded automatically on start.
+- **Shared storage**: both modes read/write `tasks.json`.
+- **CLI**: colored menus, add/edit/delete/complete, filters, due reminders.
+- **GUI**: task table, filters (status/category/priority), add/edit dialogs,
+  due-soon panel, inline summary, and a "Switch to CLI" button.
 
-## Tips
-- Use the due date format `YYYY-MM-DD`.
-- Priorities accept `low`, `medium`, or `high`.
-- Watch the suite summary after each action for totals and reminders.
+## Notes
+- Python 3.9+ with Tkinter (ships with CPython) is required.
+- Tasks accept optional due dates (`YYYY-MM-DD`), priorities (low/medium/high),
+  and categories (General, Work, Personal, Errands, Study).
+- Everything lives in `todo.py` for easy sharing.
